@@ -1,0 +1,196 @@
+@use './../../helpers/inverters' as *;
+
+.Profiles_filters {
+    position: fixed;
+    left: 0;
+    top: 80px;
+    width: 400px;
+    height: 100%;
+    z-index: 2;
+    background-color: white;
+    @include linear(0.8s, ease, all);
+
+    @include Breakpoints(medium) {
+        left: -200%;
+
+        &.Show {
+            left: 0;
+        }
+    }
+
+    @include Breakpoints(small) {
+        left: -200%;
+        width: 80%;
+
+        &.Show {
+            left: 0;
+        }
+    }
+
+    @include Breakpoints(mobile) {
+        left: -200%;
+        width: 100%;
+
+        &.Show {
+            left: 0;
+        }
+    }
+
+    .User {
+        width: 100%;
+        height: 100px;
+        position: absolute;
+        bottom: 80px;
+
+        img {
+            width: 60px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+    }
+
+    input[type='submit'] {
+        @include FormSubmit();
+        @include linear(0.7s, linear, all);
+
+        &:hover {
+            transform: none;
+            background-color: $HoverColor;
+        }
+    }
+
+    input[type='range']::-webkit-slider-thumb {
+        background: $BaseColor;
+    }
+
+    span {
+        color: $BaseColor;
+        font-weight: bolder;
+    }
+}
+
+.Profiles {
+    height: max-content;
+    position: relative;
+    top: 80px;
+    color: $BaseColor;
+    margin-left: 400px;
+
+    @include Breakpoints(medium) {
+        margin: auto;
+    }
+
+    @include Breakpoints(small) {
+        margin: auto;
+    }
+
+    @include Breakpoints(mobile) {
+        margin: auto;
+    }
+
+
+
+    .Profiles_Show {
+        // border: solid black 1px;
+        position: relative;
+
+        .Search {
+            position: absolute;
+            left: 9px;
+            top: 20px;
+            font-size: 25px;
+        }
+
+        input {
+            width: 70%;
+            outline: none;
+            border: none;
+            border-radius: 50px;
+            background-color: #dcdcf4;
+            padding: 13px 40px;
+
+            @include Breakpoints(medium) {
+                width: 95%;
+            }
+
+            @include Breakpoints(small) {
+                width: 95%;
+            }
+
+            @include Breakpoints(mobile) {
+                width: 80%;
+            }
+        }
+
+        .Menu {
+            display: none;
+            font-size: 30px;
+            position: absolute;
+            right: 10px;
+            top: 15px;
+            z-index: 2;
+
+            &.Close {
+                color: white;
+
+                @include Breakpoints(mobile) {
+                    color: $BaseColor;
+                }
+            }
+
+            @include Breakpoints(medium) {
+                display: flex;
+            }
+
+            @include Breakpoints(small) {
+                display: flex;
+            }
+
+            @include Breakpoints(mobile) {
+                display: flex;
+            }
+        }
+
+        @include Breakpoints(medium) {
+            margin-left: 0;
+        }
+
+        @include Breakpoints(small) {
+            margin-left: 0;
+        }
+
+        @include Breakpoints(mobile) {
+            margin-left: 0;
+        }
+
+        .Search_Details {
+            text-align: justify;
+        }
+
+
+    }
+
+
+}
+
+.backdrop {
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 1;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(black, 0.4);
+    opacity: 0;
+
+    @include linear(0.5s, linear, all);
+
+    &.See {
+        visibility: visible;
+        opacity: 1;
+    }
+
+    &.hide {
+        visibility: hidden;
+    }
+}

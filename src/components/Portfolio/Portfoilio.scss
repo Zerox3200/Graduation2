@@ -1,0 +1,178 @@
+@use './../../helpers/inverters' as *;
+
+.Portfoilio {
+    border: solid transparent 1px;
+    height: 500px;
+    background-color: #5353762b;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    column-gap: 40px;
+    margin-top: 50px;
+
+    @include Breakpoints(medium) {
+        padding: 0 20px;
+    }
+
+    @include Breakpoints(small) {
+        height: max-content;
+        flex-wrap: wrap;
+        padding: 20px 0;
+    }
+
+    @include Breakpoints(mobile) {
+        height: max-content;
+        flex-wrap: wrap;
+        padding: 20px 0;
+    }
+
+    .Portfoilio_pt1 {
+        border: solid transparent 1px;
+        height: 300px;
+        width: 30%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+
+        h2 {
+            font-weight: bold;
+        }
+
+        p {
+            text-align: justify;
+        }
+
+        @include Breakpoints(small) {
+            width: 70%;
+            height: 200px;
+        }
+
+        @include Breakpoints(mobile) {
+            width: 90%;
+            height: 200px;
+        }
+    }
+
+    .Portfoilio_pt2 {
+        border: solid white 1px;
+        height: 300px;
+        width: 700px;
+        background-color: white;
+        position: relative;
+
+        @include Breakpoints(small) {
+            width: 70%;
+        }
+
+        @include Breakpoints(mobile) {
+            width: 90%;
+            height: 350px;
+        }
+
+        .Portfoilio_pt2_Info {
+            height: 120px;
+            display: flex;
+            align-items: center;
+            column-gap: 20px;
+            padding-left: 25px;
+            padding-top: 10px;
+
+            >img {
+                border-radius: 50%;
+                width: 90px;
+                border: solid rgb(0 0 0 / 8%) 5px;
+            }
+
+            .Image_Info {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: flex-start;
+                row-gap: 10px;
+
+                .Image_Info_text {
+                    h6 {
+                        margin: 0;
+                        position: relative;
+                        right: 1px;
+                        font-family: 'Kanit', sans-serif;
+                    }
+
+                    span {
+                        font-size: 14px;
+                        opacity: 0.6;
+                        position: relative;
+                        top: 2px;
+                        font-family: 'Kanit', sans-serif;
+                    }
+                }
+
+                .Image_into_Stars {
+                    display: flex;
+                    width: 100%;
+                    justify-content: space-between;
+
+                    img {
+                        width: 20px;
+                    }
+                }
+            }
+        }
+
+        .Portfoilio_pt2_Bio {
+            height: 180px;
+            display: flex;
+            justify-content: center;
+            padding-top: 30px;
+
+
+            p {
+                width: 80%;
+                position: relative;
+                font-style: italic;
+                font-size: 15px;
+
+
+                img {
+                    width: 20px;
+                    opacity: 0.8;
+                }
+
+                .LeftImage {
+                    margin-right: 13px;
+                }
+
+                .RightImage {
+                    margin-left: 13px;
+                }
+            }
+        }
+    }
+}
+
+.splide.is-initialized,
+.splide.is-rendered {
+    height: 100%;
+    overflow: hidden;
+    padding: 0;
+
+    .splide__track {
+        height: 100%;
+    }
+
+    .splide__pagination__page:hover {
+        background-color: $BaseColor;
+    }
+
+    .splide__pagination__page.is-active {
+        background-color: $BaseColor;
+    }
+}
+
+.splide__pagination {
+    @include Breakpoints(mobile) {
+        position: absolute;
+        bottom: 3%;
+    }
+
+}

@@ -1,0 +1,33 @@
+@use './../../../helpers/inverters' as *;
+
+.ContactIcons {
+    border: solid whitesmoke 1px;
+    height: 217px;
+    width: 48%;
+    display: flex;
+    flex-direction: column;
+    padding: 40px;
+    background-color: whitesmoke;
+
+    svg {
+        font-size: 50px;
+        color: $BaseColor;
+        margin-bottom: 5px;
+
+        @include Breakpoints(mobile) {
+            margin-bottom: 10px;
+        }
+    }
+
+    h4 {
+        font-weight: 600;
+    }
+
+    span {
+        font-size: 17px;
+    }
+
+    @include Breakpoints(mobile) {
+        width: 100%;
+    }
+}

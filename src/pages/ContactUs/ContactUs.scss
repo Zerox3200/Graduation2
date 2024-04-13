@@ -1,0 +1,188 @@
+@use './../../helpers/inverters' as *;
+
+.ContactUs_intro {
+    height: 450px;
+    background-image: linear-gradient(to left, rgba(black, 0.6), rgba(black, 0.6)),
+        url('./../../Image/pexels-kyle-loftus-2510425.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    flex-direction: column;
+    color: white;
+    row-gap: 5px;
+    padding-bottom: 20px;
+
+    h1 {
+        color: white;
+    }
+
+    p {
+        text-align: center;
+        font-size: 18px;
+        width: 50%;
+
+        @include Breakpoints(small) {
+            width: 80%;
+        }
+
+        @include Breakpoints(mobile) {
+            width: 90%;
+        }
+    }
+}
+
+.Contact_Details {
+    height: max-content;
+    display: flex;
+    flex-direction: column;
+    background-color: whitesmoke;
+    padding-bottom: 50px;
+
+
+    .Contact_Details_pt1 {
+        width: 100%;
+        height: 250px;
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        text-align: center;
+        flex-wrap: wrap;
+
+        @include Breakpoints(mobile) {
+            height: 500px;
+
+        }
+
+        .Contact_Icons_pt1 {
+            width: calc(100%/3);
+
+            @include Breakpoints(mobile) {
+                width: 100%;
+            }
+
+            &.bor {
+                border-right: solid $BaseColor 1px;
+
+                @include Breakpoints(mobile) {
+                    border: none;
+                }
+            }
+
+            svg {
+                color: $BaseColor;
+                font-size: 60px;
+            }
+
+            p {
+                margin: 0;
+                margin-top: 15px;
+                color: $BaseColor;
+                font-weight: bold;
+                font-size: 22px;
+                font-family: 'Courier New', Courier, monospace;
+            }
+
+            a,
+            span {
+                font-size: 12px;
+                text-decoration: none;
+                color: black;
+                font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            }
+        }
+    }
+
+    form {
+        border: solid white 1px;
+        height: max-content;
+        background-color: white;
+        box-shadow: 0px 0px 8px #00000054;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: center;
+        align-content: space-evenly;
+        padding: 50px;
+
+        .SendName,
+        .SendEmail {
+            width: 49%;
+
+            input {
+                width: 100%;
+                border: rgba(black, 0.2) solid 1px;
+                height: 50px;
+                padding-left: 10px;
+                outline: none;
+
+                &:focus {
+                    border-color: $BaseColor;
+                }
+            }
+
+            @include Breakpoints(small) {
+                width: 100%;
+            }
+
+            @include Breakpoints(mobile) {
+                width: 100%;
+            }
+        }
+
+        .SendSubject {
+            width: 100%;
+
+            input {
+                width: 100%;
+                border: rgba(black, 0.2) solid 1px;
+                height: 50px;
+                padding-left: 10px;
+                outline: none;
+
+                &:focus {
+                    border-color: $BaseColor;
+                }
+            }
+        }
+
+        @include Breakpoints(small) {
+            row-gap: 10px;
+        }
+
+        @include Breakpoints(mobile) {
+            row-gap: 10px;
+        }
+
+        textarea {
+            width: 100%;
+            border: rgba(black, 0.2) solid 1px;
+            padding: 10px;
+            outline: none;
+            resize: none;
+            margin-top: 10px;
+
+            &:focus {
+                border-color: $BaseColor;
+            }
+        }
+
+        button {
+            margin: auto;
+            @include FormSubmit();
+            @include linear(0.8s, linear, all);
+            padding: 10px 50px;
+            border-radius: 5px;
+            position: relative;
+            top: 17px;
+
+            &:hover {
+                transform: scale(1);
+                background-color: $HoverColor;
+                color: white;
+            }
+        }
+    }
+}

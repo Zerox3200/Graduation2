@@ -1,0 +1,120 @@
+@use './../../helpers/inverters' as *;
+
+.AboutUs {
+    height: max-content;
+    margin-top: 50px;
+    display: flex;
+    flex-direction: column;
+    row-gap: 50px;
+
+    .AboutUs_Desc {
+        height: max-content;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        row-gap: 10px;
+
+        @include Breakpoints(small) {
+            height: max-content;
+        }
+
+        @include Breakpoints(mobile) {
+            height: max-content;
+        }
+
+        .AboutUs_Desc_pt2 {
+            display: flex;
+            align-items: center;
+            justify-content: space-evenly;
+            width: 100%;
+            column-gap: 20px;
+
+            @include Breakpoints(small) {
+                flex-direction: column;
+                justify-content: center;
+                height: 100%;
+            }
+
+            @include Breakpoints(mobile) {
+                flex-direction: column;
+                justify-content: center;
+                height: 100%;
+            }
+
+            h2 {
+                color: #31315b;
+            }
+
+            .AboutUs_Paragraphs {
+                width: 50%;
+                display: flex;
+                flex-direction: column;
+
+                @include Breakpoints(small) {
+                    width: 100%;
+                    order: 2;
+                }
+
+                @include Breakpoints(mobile) {
+                    width: 100%;
+                    order: 2;
+                }
+
+                h2 {
+                    font-weight: bolder;
+                }
+
+                .AboutUs_Paragraphs_icons {
+                    display: flex;
+                    width: 100%;
+                    column-gap: 20px;
+
+
+                    span {
+                        font-weight: bold;
+                    }
+
+                    svg {
+                        color: #31315b;
+                        font-size: 60px;
+                        display: flex;
+                        position: relative;
+                        top: 10px;
+                        left: -10px;
+                    }
+
+                    .AboutUs_Paragraphs_icons_text {
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: center;
+                        padding-top: 10px;
+                    }
+                }
+            }
+
+            .AboutUs_CameraMan {
+                height: 500px;
+                width: 50%;
+                background-image: url('./../../Image/view-3d-male-videographer.jpg');
+                background-position: center;
+                background-size: cover;
+
+                @include Breakpoints(medium) {
+                    height: 600px;
+                }
+
+                @include Breakpoints(small) {
+                    height: 500px;
+                    width: 100%;
+                    order: 1;
+                }
+
+                @include Breakpoints(mobile) {
+                    height: 400px;
+                    width: 100%;
+                    order: 1;
+                }
+            }
+        }
+    }
+}

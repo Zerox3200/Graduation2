@@ -1,0 +1,35 @@
+@use './../../../helpers/inverters' as *;
+
+.Details_Nav {
+    height: 80px;
+    background-color: whitesmoke;
+
+    a {
+        font-weight: bold;
+    }
+}
+
+.Details {
+    margin-top: 80px;
+
+    .mySwiper {
+        img {
+            height: 90%;
+            width: 100%;
+            object-fit: cover;
+        }
+    }
+
+    .Details_Desc {
+        button {
+            @include linear(1s, linear, all);
+            @include FormSubmit();
+
+            &:hover {
+                transform: none;
+                color: white;
+                background-color: $HoverColor;
+            }
+        }
+    }
+}

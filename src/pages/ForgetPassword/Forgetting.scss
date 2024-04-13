@@ -1,0 +1,85 @@
+@use './../../helpers/inverters' as *;
+
+.ForgetPass {
+    margin: 100px auto;
+    border: solid 1px #d9d9d9;
+    border-radius: 20px;
+    width: 700px;
+    height: 700px;
+    background-color: #d9d9d9;
+    box-shadow: 0px 0px 20px #d9d9d9;
+    padding: 100px;
+    display: flex;
+    flex-direction: column;
+    row-gap: 10px;
+
+
+    @include Breakpoints(mobile) {
+        padding: 39px;
+        width: 100%;
+    }
+
+    h3 {
+        font-weight: 900;
+    }
+
+    h5 {
+        font-weight: 400;
+        width: 400px;
+
+        @include Breakpoints(mobile) {
+            width: 100%;
+        }
+    }
+
+    form {
+        height: 300px;
+        display: flex;
+        flex-direction: column;
+        row-gap: 40px;
+
+        .ForgetForm {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+
+            label {
+                @include Label();
+            }
+
+            input {
+                @include Input();
+                width: 100%;
+            }
+        }
+
+        .Submiting {
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            height: 92px;
+            column-gap: 30px;
+
+            @include Breakpoints(mobile) {
+                column-gap: 13px;
+            }
+
+            a,
+            button {
+                display: flex;
+                justify-content: center;
+                text-decoration: none;
+                text-align: center;
+                font-size: 20px;
+                border: none;
+                @include FormSubmit();
+                @include linear(0.2s, ease, all);
+
+                @include Breakpoints(mobile) {
+                    width: 50%;
+                    font-size: 15px;
+                }
+            }
+        }
+    }
+}

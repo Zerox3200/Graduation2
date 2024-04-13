@@ -1,0 +1,78 @@
+@mixin Breakpoints($point) {
+    @if $point ==mobile {
+        @media (max-width:767px) {
+            @content;
+        }
+    }
+
+    @else if $point ==small {
+        @media (min-width:768px) and (max-width:991px) {
+            @content;
+        }
+    }
+
+    @else if $point ==medium {
+        @media (min-width:992px) and (max-width:1199px) {
+            @content;
+        }
+    }
+
+    @else if $point ==large {
+        @media (min-width:1200px) {
+            @content;
+        }
+    }
+}
+
+@mixin linear($Time, $Type, $Prop) {
+    transition: $Time $Type $Prop;
+}
+
+@mixin Label() {
+    font-size: 23px;
+    font-weight: 500;
+    font-family: 'Kalam', cursive;
+}
+
+@mixin Input() {
+    height: 44px;
+    border-radius: 7px;
+    border: none;
+    background-color: #dcdcf4;
+    box-shadow: 0px 2px 9px #00000070;
+    padding-left: 10px;
+
+    &:focus {
+        outline: none;
+    }
+}
+
+@mixin FormSubmit() {
+    padding: 7px 40px;
+    border-radius: 20px;
+    background-color: #31315b;
+    color: white;
+    box-shadow: 0px 3px 9px #00000082;
+
+    &:hover {
+        transform: scale(1.2);
+    }
+}
+
+@mixin FormContainer() {
+    margin: 100px auto;
+    border: solid 1px #d9d9d9;
+    border-radius: 20px;
+    width: 700px;
+    height: 700px;
+    background-color: #d9d9d9;
+    box-shadow: 0px 0px 20px #d9d9d9;
+    padding: 100px;
+    display: flex;
+    flex-direction: column;
+    row-gap: 10px;
+}
+
+$HoverColor: #0a0a12;
+
+$BaseColor: #31315b;

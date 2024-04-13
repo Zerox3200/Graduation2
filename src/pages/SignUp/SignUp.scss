@@ -1,0 +1,132 @@
+@use './../../helpers/inverters' as *;
+
+.SingUp {
+    height: 919px;
+    display: flex;
+    justify-content: flex-end;
+    background-image: linear-gradient(to left, rgba(black, 0.3), rgba(black, 0.3)),
+        url('./../../Image/pexels-david-bartus-610293.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+
+    @include Breakpoints(small) {
+        justify-content: center;
+        align-items: center;
+    }
+
+    @include Breakpoints(mobile) {
+        justify-content: center;
+        align-items: center;
+        height: 1200px;
+    }
+
+    form {
+        width: 45%;
+        display: flex;
+        flex-wrap: wrap;
+        align-content: flex-start;
+        justify-content: space-between;
+        row-gap: 20px;
+        padding: 40px;
+        background-color: white;
+        overflow-y: scroll;
+
+        &::-webkit-scrollbar {
+            width: 10px;
+        }
+
+        /* Track */
+        &::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
+
+        /* Handle */
+        &::-webkit-scrollbar-thumb {
+            background: $BaseColor;
+        }
+
+        @include Breakpoints(medium) {
+            width: 55%;
+        }
+
+        @include Breakpoints(small) {
+            width: 68%;
+            border-radius: 10px
+        }
+
+        @include Breakpoints(mobile) {
+            width: 90%;
+            border-radius: 10px;
+            padding: 30px;
+        }
+
+        label {
+            @include Label();
+            font-size: 20px
+        }
+
+        select {
+            @include Input();
+        }
+
+        input {
+            @include Input();
+        }
+
+        h3 {
+            width: 100%;
+        }
+
+        .FirstName,
+        .LastName,
+        .Password,
+        .ConfirmPassword {
+            width: 45%;
+            display: flex;
+            flex-direction: column;
+            position: relative;
+
+            svg {
+                position: absolute;
+                right: 5px;
+                top: 40px;
+                cursor: pointer;
+            }
+
+            @include Breakpoints(mobile) {
+                width: 100%;
+            }
+        }
+
+        .Email,
+        .Phone,
+        .BirthDay,
+        .Address,
+        .Gender,
+        .ClientOrPhotogarpher {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+
+        button {
+            width: 60%;
+            font-size: 20px;
+            border: solid transparent 1px;
+            border-radius: 20px;
+            position: relative;
+            top: 20px;
+            text-align: center;
+            background-color: $BaseColor;
+            color: white;
+            margin: auto;
+
+            &:hover {
+                background-color: $HoverColor;
+                color: white;
+            }
+
+        }
+    }
+}

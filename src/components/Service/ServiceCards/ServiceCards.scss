@@ -1,0 +1,44 @@
+@use './../../../helpers/inverters' as *;
+
+.card {
+    width: 23rem;
+    overflow: hidden;
+
+    @include Breakpoints(medium) {
+        width: 28rem;
+    }
+
+    @include Breakpoints(small) {
+        width: 80%;
+    }
+
+    @include Breakpoints(mobile) {
+        width: 100%;
+    }
+
+    .card-img {
+        overflow: hidden;
+        border-radius: 0;
+    }
+
+    img {
+        object-fit: cover;
+        height: 400px;
+        @include linear(0.2s, linear, all);
+
+        &:hover {
+            transform: scale(1.1);
+        }
+    }
+
+    h4 {
+        font-weight: bold;
+        color: $BaseColor;
+    }
+
+    .card-body {
+        p {
+            width: 100%;
+        }
+    }
+}

@@ -1,0 +1,163 @@
+@use './../../helpers/inverters' as *;
+
+
+.AboutUs_Title {
+    margin-top: 50px;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.Service {
+    height: max-content;
+    display: flex;
+    flex-direction: column;
+
+    .Service_pt1 {
+        height: 600px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        column-gap: 10px;
+
+        @include Breakpoints(medium) {
+            flex-wrap: wrap;
+            height: max-content;
+            row-gap: 10px;
+            justify-content: flex-start;
+            margin-bottom: 40px;
+        }
+
+        @include Breakpoints(small) {
+            flex-wrap: wrap;
+            height: max-content;
+            row-gap: 10px;
+            justify-content: center;
+        }
+
+        @include Breakpoints(mobile) {
+            flex-wrap: wrap;
+            height: max-content;
+            row-gap: 10px;
+            justify-content: center;
+        }
+
+    }
+
+    .Service_pt2 {
+        height: max-content;
+        display: flex;
+        flex-direction: column;
+        padding: 0 30px;
+
+        &.Deal {
+            @include Breakpoints(small) {
+                .Service_pt2_Descriptions_paragraphs {
+                    order: 2;
+                }
+
+                img {
+                    order: 1;
+                }
+            }
+
+            @include Breakpoints(mobile) {
+                .Service_pt2_Descriptions_paragraphs {
+                    order: 2;
+                }
+
+                img {
+                    order: 1;
+                }
+            }
+        }
+
+        .Service_pt2_Descriptions {
+            height: 650px;
+            display: flex;
+            align-items: center;
+            justify-content: space-evenly;
+
+            @include Breakpoints(small) {
+                height: max-content;
+                flex-direction: column;
+            }
+
+            @include Breakpoints(mobile) {
+                flex-direction: column;
+                height: max-content;
+            }
+
+            img {
+                width: 45%;
+
+                @include Breakpoints(small) {
+                    width: 100%;
+                }
+
+                @include Breakpoints(mobile) {
+                    width: 100%;
+                }
+            }
+
+            .Service_pt2_Descriptions_paragraphs {
+                width: 40%;
+                height: 100%;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+
+                @include Breakpoints(small) {
+                    width: 100%;
+                }
+
+                @include Breakpoints(mobile) {
+                    width: 100%;
+                }
+
+                h2 {
+                    font-weight: bold;
+                }
+
+                p:first-of-type {
+                    font-size: 20px;
+                    color: #506690;
+                }
+
+                p:nth-of-type(2) {
+                    font-size: 18px;
+                    opacity: 0.8;
+                }
+
+                ul {
+                    li {
+                        opacity: 0.9;
+                    }
+
+
+                }
+
+                a {
+                    border: solid #506690 1px;
+                    background-color: #506690;
+                    padding: 15px 20px;
+                    width: 220px;
+                    color: white;
+                    @include linear(0.8s, linear, all);
+
+
+                    @include Breakpoints(mobile) {
+                        width: 90%;
+                        margin: auto;
+                    }
+
+                    &:hover {
+                        background-color: $HoverColor;
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,144 @@
+@use './../../helpers/inverters' as *;
+
+.MainContact {
+    background-color: white;
+    padding-top: 25px;
+    padding-bottom: 70px;
+
+    h1 {
+        text-align: center;
+        font-family: 'Architects Daughter', 'cursive';
+        font-weight: bold;
+        color: $BaseColor;
+    }
+
+    .Contact {
+        width: 100%;
+        height: max-content;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        row-gap: 40px;
+
+        .ContactUS {
+            width: 100%;
+            height: max-content;
+            display: flex;
+            align-items: flex-start;
+            justify-content: space-between;
+
+            @include Breakpoints(medium) {
+                flex-direction: column;
+                row-gap: 20px;
+            }
+
+            @include Breakpoints(small) {
+                flex-direction: column;
+                row-gap: 20px;
+            }
+
+            @include Breakpoints(mobile) {
+                flex-direction: column;
+                row-gap: 20px;
+            }
+
+            .ContactUS_pt1 {
+                width: 49%;
+                height: 100%;
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: space-between;
+                row-gap: 15px;
+
+                @include Breakpoints(medium) {
+                    width: 100%;
+                }
+
+                @include Breakpoints(small) {
+                    width: 100%;
+                }
+
+                @include Breakpoints(mobile) {
+                    width: 100%;
+                }
+            }
+
+            .ContactUS_pt2 {
+                border: solid whitesmoke 1px;
+                width: 49%;
+                height: max-content;
+                background-color: whitesmoke;
+
+                @include Breakpoints(medium) {
+                    width: 100%;
+                }
+
+                @include Breakpoints(small) {
+                    width: 100%;
+                }
+
+                @include Breakpoints(mobile) {
+                    width: 100%;
+                }
+
+                form {
+                    padding: 50px 0px;
+                    width: 100%;
+                    height: max-content;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    flex-wrap: wrap;
+                    row-gap: 20px;
+                    column-gap: 10px;
+
+                    #Name,
+                    #Email,
+                    #Subject,
+                    #Text {
+                        height: 45px;
+                        border: solid 1px rgba(black, 0.2);
+                        outline: none;
+                        padding-left: 10px;
+                        font-size: 15px;
+                        background-color: rgba(white, 0.6);
+
+                        &:focus {
+                            border-color: $BaseColor;
+                        }
+                    }
+
+                    #Name,
+                    #Email {
+                        width: 45%;
+                    }
+
+                    #Subject,
+                    #Text {
+                        width: 92%;
+                    }
+
+                    #Text {
+                        height: 150px;
+                        resize: none
+                    }
+
+                    button {
+                        @include FormSubmit();
+                        padding: 10px 40px;
+                        border-radius: 0;
+                        @include linear(0.7s, linear, all);
+                        border-radius: 10px;
+                        position: relative;
+                        top: 15px;
+
+                        &:hover {
+                            background-color: $HoverColor;
+                            transform: scale(1);
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

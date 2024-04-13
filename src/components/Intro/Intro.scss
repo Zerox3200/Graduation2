@@ -1,0 +1,45 @@
+@use './../../helpers/inverters' as *;
+
+.Intro {
+    height: 919px;
+    background-image: linear-gradient(to right, rgba(black, 0.2), rgba(black, 0.2)),
+        url(./../../Image/EventSlide1.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding-left: 40px;
+
+    .Intro_Title {
+        color: white;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: flex-start;
+        row-gap: 15px;
+        width: 650px;
+
+        @include Breakpoints(small) {
+            width: 90%
+        }
+
+        @include Breakpoints(mobile) {
+            width: 90%
+        }
+
+
+        button {
+            @include FormSubmit();
+            @include linear(0.4s, linear, all);
+            padding: 10px 40px;
+
+            &:hover {
+                transform: scale(1);
+                background-color: #0a0a12;
+            }
+        }
+    }
+}

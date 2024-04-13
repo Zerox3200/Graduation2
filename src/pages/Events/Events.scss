@@ -1,0 +1,141 @@
+@use './../../helpers/inverters' as *;
+
+.Events_SideBar {
+    height: 100%;
+    width: 300px;
+    position: fixed;
+    left: 0;
+    padding: 20px;
+    z-index: 2;
+    background-color: white;
+    @include linear(0.3s, linear, all);
+
+    &.Show {
+        left: 0;
+        width: 70%;
+
+        @include Breakpoints(mobile) {
+            width: 90%;
+        }
+    }
+
+    @include Breakpoints(medium) {
+        left: -100%;
+    }
+
+    @include Breakpoints(small) {
+        left: -100%;
+    }
+
+    @include Breakpoints(mobile) {
+        left: -180%;
+    }
+
+    &::after {
+        content: '';
+        position: absolute;
+        right: 0;
+        top: 0;
+        height: 90%;
+        top: 70px;
+        width: 0;
+        border: 0.1px rgba(black, 0.1) solid;
+    }
+
+    a {
+        text-decoration: none;
+        border-radius: 50px;
+        @include linear(0.5s, linear, all);
+        font-size: 20px;
+        display: flex;
+        align-items: center;
+        width: max-content;
+        column-gap: 10px;
+
+        svg {
+            font-size: 20px;
+        }
+
+        &:hover {
+            background-color: $BaseColor;
+            color: white;
+        }
+    }
+
+    .User {
+        position: absolute;
+        width: 100%;
+        left: 0;
+        bottom: 0;
+        height: 100px;
+
+
+
+        img {
+            width: 60px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+    }
+}
+
+.SideMenu {
+    font-size: 30px;
+
+    @include Breakpoints(large) {
+        display: none;
+    }
+
+}
+
+.Close {
+    font-size: 30px;
+    cursor: pointer;
+
+    @include Breakpoints(large) {
+        display: none;
+    }
+}
+
+.EventsPage {
+    height: max-content;
+    margin-left: 300px;
+    padding-left: 10px;
+
+    @include Breakpoints(medium) {
+        margin: auto;
+    }
+
+    @include Breakpoints(small) {
+        margin: auto;
+
+    }
+
+    @include Breakpoints(mobile) {
+        margin: auto;
+
+    }
+
+    .Events_Details {
+        height: max-content;
+        padding-top: 20px;
+
+        .Events_Filters {
+            button {
+                border-radius: 50px;
+                @include linear(0.5s, linear, all);
+                font-weight: bold;
+
+                &.Active {
+                    background-color: $BaseColor;
+                    color: white;
+                }
+
+                &:hover {
+                    background-color: $BaseColor;
+                    color: white;
+                }
+            }
+        }
+    }
+}

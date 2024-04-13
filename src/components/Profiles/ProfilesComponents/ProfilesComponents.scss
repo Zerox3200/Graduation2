@@ -1,0 +1,164 @@
+@use './../../../helpers/inverters' as *;
+
+.ProfilesComponent {
+    margin-top: 15px;
+
+    .ProfilesComponent_Title {
+        height: max-content;
+        background-color: #f4f4f4;
+
+        .ProfilesComponent_Title_1 {
+            height: 50%;
+
+            img {
+                width: 70px;
+                height: 70px;
+                border-radius: 50%;
+                object-fit: cover;
+            }
+
+            .RatingAndName {
+                position: relative;
+
+
+                svg {
+                    color: #ffe144;
+                }
+
+                span {
+                    position: absolute;
+                    bottom: 0;
+                    left: 120px;
+                    font-weight: lighter;
+                }
+            }
+        }
+
+        .ProfilesComponent_Title_2 {
+            height: 50%;
+
+            p {
+                width: 80%;
+            }
+
+            span {
+                width: 40px;
+                height: 40px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                border-radius: 50%;
+                color: rgba(white, 0.5);
+                background-color: black;
+                cursor: pointer;
+
+                @include linear(0.2s, linear, all);
+
+                &.Look {
+                    transform: rotate(90deg);
+                }
+
+                svg {
+                    font-size: 25px;
+                }
+            }
+        }
+    }
+
+    .ProfilesComponent_Details {
+        height: 0;
+        --bs-gutter-x: 0;
+        overflow: hidden;
+
+        .ProfilesComponent_Details_Main {
+            width: 300px;
+
+            @include Breakpoints(mobile) {
+                width: 100%;
+            }
+
+            svg {
+                color: #ffe144;
+                font-size: 17px;
+            }
+
+            img {
+                width: 150px;
+                border-radius: 50%;
+            }
+
+
+            .Trust {
+
+                .Loading {
+                    height: 12px;
+                    width: 60%;
+                    border: solid black 1px;
+                    border-radius: 17px;
+
+                    span {
+                        height: 100%;
+                        background-color: $BaseColor;
+                        display: block;
+                        border-radius: 17px;
+                    }
+                }
+            }
+        }
+
+        .ProfilesComponent_Details_Details {
+            width: 300px;
+
+
+            @include Breakpoints(mobile) {
+                width: 100%;
+                margin-top: 20px;
+                padding: 0 20px;
+            }
+
+            article {
+                p {
+                    margin: 0;
+                }
+            }
+
+            article:nth-of-type(2) {
+                row-gap: 20px;
+
+                b {
+                    font-size: 20px;
+                }
+
+                @include Breakpoints(mobile) {
+                    row-gap: 0;
+                }
+            }
+        }
+    }
+
+    .ProfilesComponent_Footer {
+        height: 70px;
+        justify-content: end;
+
+        @include Breakpoints(mobile) {
+            justify-content: center;
+            margin-top: 20px;
+        }
+
+        button,
+        a {
+            background-color: $BaseColor;
+            color: white;
+            padding: 10px 50px;
+            border-radius: 40px;
+
+            @include Breakpoints(mobile) {
+                padding: 10px 35px;
+            }
+
+            &:hover {
+                background-color: rgba($BaseColor, 0.7);
+            }
+        }
+    }
+}
